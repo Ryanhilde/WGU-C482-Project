@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ModifyPartController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="117.0" prefWidth="194.0" text="Modify Part">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox layoutX="262.0" layoutY="65.0" prefHeight="29.0" prefWidth="217.0">
+         <children>
+            <RadioButton fx:id="InhouseRadioButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#InhouseHandler" text=" In-House">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="RadioButton" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="OutsourcedRadioButton" mnemonicParsing="false" onAction="#OutsourcedHandler" text=" Outsourced" toggleGroup="$RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <GridPane layoutX="90.0" layoutY="158.0" prefHeight="250.0" prefWidth="260.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ID" />
+            <Label text="Name" GridPane.rowIndex="1" />
+            <Label text="Inv" GridPane.rowIndex="2" />
+            <Label text="Price/Cost" GridPane.rowIndex="3" />
+            <TextField fx:id="NameInhouseModifyPartText" onAction="#NameInhouseModifyPartText" prefHeight="25.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="InventoryInhouseModifyPartText" onAction="#InventoryInhouseModifyPartText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="PriceCostInhouseModifyPartText" onAction="#PriceCostInhouseModifyPartText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField disable="true" editable="false" text="Auto Gen - Disabled" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="90.0" layoutY="396.0" prefHeight="63.0" prefWidth="370.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="126.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="0.0" prefWidth="92.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="92.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Min" GridPane.columnIndex="2">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <Label text="Max" />
+            <TextField fx:id="MaxInhouseModifyPartText" onAction="#MaxInhouseModifyPartText" prefHeight="25.0" prefWidth="100.0" GridPane.columnIndex="1" />
+            <TextField fx:id="MinInhouseModifyPartText" onAction="#MinInhouseModifyPartText" prefHeight="25.0" prefWidth="100.0" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="90.0" layoutY="467.0" prefHeight="30.0" prefWidth="260.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="128.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="MACIDLbl" prefHeight="62.5" prefWidth="240.0" text="Machine ID" />
+            <TextField fx:id="MachineIDInhouseModifyPartText" onAction="#MachineIDInhouseModifyPartText" prefWidth="132.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="CancellButton" layoutX="450.0" layoutY="531.0" mnemonicParsing="false" onAction="#cancelHandler" prefWidth="80.0" text="Cancel">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="SaveButton" layoutX="347.0" layoutY="531.0" mnemonicParsing="false" onAction="#saveHandler" prefWidth="80.0" text="Save">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
